@@ -18,6 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- The settings provider -->
+        <provider
+            android:name="com.endcoming.gesture.db.DataProvider"
+            android:authorities="com.endcoming.settings"
+            android:readPermission="com.android.launcher.permission.READ_SETTINGS"
+            android:writePermission="com.android.launcher.permission.WRITE_SETTINGS" />
     </application>
 
 </manifest>
