@@ -7,11 +7,14 @@
     <uses-sdk android:minSdkVersion="14" />
 
     <application
+        android:name="com.endcoming.gesture.MyGestureApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".MyGestureActivity"
-            android:label="@string/app_name" >
+            android:name=".diygesture.view.DiyGestureRecogniser"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:theme="@style/Dialog" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +22,43 @@
             </intent-filter>
         </activity>
 
+        <!-- 我的手势Activity__begin -->
+        <activity
+            android:name=".diygesture.view.MyGesture"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <!-- 
+        <activity
+            android:name=".diygesture.view.DiyGestureRecogniser"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:theme="@style/Dialog" >
+        </activity>
+         -->
+        <activity
+            android:name=".diygesture.view.DiyGestureAddActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:theme="@style/Dialog" >
+        </activity>
+        <activity
+            android:name=".diygesture.view.DiyGestureEditActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:theme="@style/Dialog" >
+        </activity>
+        <activity
+            android:name=".diygesture.view.NextShortcutView"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/Dialog" />
+        <!-- 我的手势Activity__end -->
+
+
         <!-- The settings provider -->
         <provider
-            android:name="com.endcoming.gesture.db.DataProvider"
+            android:name=".db.DataProvider"
             android:authorities="com.endcoming.settings"
             android:readPermission="com.android.launcher.permission.READ_SETTINGS"
             android:writePermission="com.android.launcher.permission.WRITE_SETTINGS" />
